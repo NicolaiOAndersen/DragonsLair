@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Linq;
 
 namespace DragonsLair_1
 {
@@ -17,32 +19,65 @@ namespace DragonsLair_1
 
         public void ScheduleNewRound(string tournamentName, bool printNewMatches = true)
         {
-            Round round = new Round();
 
-            Tournament tournament = new Tournament(tournamentName);
+         Tournament tournament = tournamentRepository.GetTournament(tournamentName);
+            
 
-            tournament.GetNumberOfRounds();
+           
+           int RoundTotal = tournament.GetNumberOfRounds();
+            
+            //definer variabel
+            List<Team> teams;
 
+            
 
-
-            if (tournament.GetNumberOfRounds() == 0)
+            if (RoundTotal == 0)
             {
-                tournament.GetTeams();
+                teams = tournament.GetTeams();
             }
             else
             {
-                tournament.GetRound(tournament.GetNumberOfRounds() - 1);
+                //LastRound = runden som lige er blevet spillet.
+                Round LastRound = tournament.GetRound(tournament.GetNumberOfRounds() - 1);
 
-                round.IsMatchesFinished();
+                bool IsRoundFinished = LastRound.IsMatchesFinished();
+
+
+                if (IsRoundFinished)
+                {
+                    teams = LastRound.GetWinningTeams();
+
+                    if (teams.Count >= 2)
+                    {
+
+                        //spooks, tjek
+                        var rnd = new Random();
+                        var RandomTeams = teams.OrderBy(item => rnd.Next());
+
+                        Round newRound = new Round();
+
+                        if (teams.Count % 2 == 0)
+                        {
+                            OldFreeRider = LastRound.
+
+                        }
+
+
+                    }
+                    else
+                    {
+
+                        //finished
+                    }
+
+                }
+                else
+                {
+
+                    //exception
+
+                }
             }
-            if (round.IsMatchesFinished())
-            {
-                round.GetWinningTeams();
-
-                //if()
-
-            }
-
 
         }
 
