@@ -7,7 +7,7 @@ namespace DragonsLair_1
         private TournamentRepo tournamentRepository = new TournamentRepo();
 
         public void ShowScore(string tournamentName)
-        {
+        {   
             /*
              * TODO: Calculate for each team how many times they have won
              * Sort based on number of matches won (descending)
@@ -17,7 +17,33 @@ namespace DragonsLair_1
 
         public void ScheduleNewRound(string tournamentName, bool printNewMatches = true)
         {
-            // Do not implement this method
+            Round round = new Round();
+
+            Tournament tournament = new Tournament(tournamentName);
+
+            tournament.GetNumberOfRounds();
+
+
+
+            if (tournament.GetNumberOfRounds() == 0)
+            {
+                tournament.GetTeams();
+            }
+            else
+            {
+                tournament.GetRound(tournament.GetNumberOfRounds() - 1);
+
+                round.IsMatchesFinished();
+            }
+            if (round.IsMatchesFinished())
+            {
+                round.GetWinningTeams();
+
+                //if()
+
+            }
+
+
         }
 
         public void SaveMatch(string tournamentName, int roundNumber, string team1, string team2, string winningTeam)

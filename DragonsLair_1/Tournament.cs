@@ -36,7 +36,7 @@ namespace DragonsLair_1
             if (idx == 0)
             {
 
-                //Vi tilføjer Losers
+                
                 Match match1 = new Match();
                 match1.FirstOpponent = new Team("The Valyrians");
                 match1.SecondOpponent = new Team("The Spartans");
