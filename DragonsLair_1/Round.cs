@@ -81,8 +81,10 @@ namespace DragonsLair_1
 
         public void AddFreeRider(Team FreeRider)
         {
-            //teams.Add(FreeRider);
             
+           this.FreeRider = FreeRider;
+            
+
         }
 
     }
