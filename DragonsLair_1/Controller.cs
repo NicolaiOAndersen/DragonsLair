@@ -102,12 +102,12 @@ namespace DragonsLair_1
                             newRound.AddMatch(match);
                         }
                         //
-                        tournament.Add(newRound);
+                        tournament.Addround(newRound);
 
                     }
                     else
                     {
-
+                        tournament.SetStatusFinished();
                         //finished
                     }
 

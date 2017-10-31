@@ -25,23 +25,22 @@ namespace DragonsLair_1
                 new Team("The Corinthians")
             });
         }
-        private List<Round> Rounds()
-        {
-
-            return new List<Round>();
-        }
-
         
+
+        private List<Round> Roundss = new List<Round>();
 
         public int GetNumberOfRounds()
         {
-            return 3;
+            return Roundss.Count;
         }
-        public void Add(Round round)
+        public void Addround(Round round)
         {
-            //Rounds.Add(round);
+            Roundss.Add(round);
         }
+        public void SetStatusFinished()
+        {
 
+        }
         
         public Round GetRound(int idx)
         {
