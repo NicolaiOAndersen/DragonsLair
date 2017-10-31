@@ -31,6 +31,7 @@ namespace DragonsLair_1
 
         public void ScheduleNewRound(string tournamentName, bool printNewMatches = true)
         {
+
             //GetTournament
          Tournament tournament = tournamentRepository.GetTournament(tournamentName);
 
@@ -117,8 +118,12 @@ namespace DragonsLair_1
 
                     //exception
 
+                    throw new Exception("ERROR Round Not Finished");
+
                 }
             }
+
+
 
         }
 
