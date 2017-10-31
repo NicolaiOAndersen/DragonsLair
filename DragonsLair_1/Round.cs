@@ -5,9 +5,7 @@ namespace DragonsLair_1
     public class Round
     {
         private List<Match> matches = new List<Match>();
-
-        private Team FreeRider = new Team("");
-
+        
         public void AddMatch(Match m)
         {
             matches.Add(m);
@@ -15,10 +13,12 @@ namespace DragonsLair_1
 
         public Match GetMatch(string teamName1, string teamName2)
         {
-
-
+            //har indsat en ny instans
+            Match match = new Match();
+            
+            
             // TODO: Implement this method
-            return null;
+            return match;
         }
 
         public bool IsMatchesFinished()
@@ -69,21 +69,8 @@ namespace DragonsLair_1
 
             return loser;
         }
-        public Team GetFreeRider()
-        {
-            //TODO skriv metoden
+       
 
-           
-
-
-            return this.FreeRider;
-        }
-
-        public void AddFreeRider(Team FreeRider)
-        {
-            //teams.Add(FreeRider);
-            
-        }
 
     }
 }

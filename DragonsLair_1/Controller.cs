@@ -56,19 +56,9 @@ namespace DragonsLair_1
 
                         Round newRound = new Round();
 
-                        if (teams.Count % 2 != 0)
+                        if (teams.Count % 2 == 0)
                         {
-                            //mangler metoden addet en attribute.
-                            Team OldFreeRider = LastRound.GetFreeRider();
-
-                            //Vi skalsammenligne navne.
-                            //match.FirstOpponent.Name != match.Winner.Name
                             
-                        //while ()
-                            //{
-                               
-
-                            //}
 
                         }
 
@@ -77,7 +67,7 @@ namespace DragonsLair_1
                     else
                     {
 
-                        //finishe
+                        //finished
                     }
 
                 }
