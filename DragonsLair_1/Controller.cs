@@ -116,7 +116,6 @@ namespace DragonsLair_1
                 else
                 {
 
-                    //throw new System.IndexOutOfRangeException("You can't eat an orange that isn't there!  There are 0 oranges available to eat");
                     //exception
 
                     throw new Exception("ERROR Round Not Finished");

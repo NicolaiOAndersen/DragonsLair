@@ -39,7 +39,10 @@ namespace DragonsLair_1
         }
         public void SetStatusFinished()
         {
+            //Lav en attribute, mangler status attribute.
+            //Måske skal det håndteres i controller.
             
+
         }
         
         public Round GetRound(int idx)
