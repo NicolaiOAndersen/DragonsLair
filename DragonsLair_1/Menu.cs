@@ -5,7 +5,7 @@ namespace DragonsLair_1
     public class Menu
     {
         private Controller control = null;
-        
+
         public Menu()
         {
             control = new Controller();
@@ -57,7 +57,7 @@ namespace DragonsLair_1
             Console.Write("Indtast dit valg: ");
             return Console.ReadLine();
         }
-        
+
         private void ShowScore()
         {
             Console.Write("Angiv navn på liga: ");
@@ -65,14 +65,22 @@ namespace DragonsLair_1
             Console.Clear();
             control.ShowScore(tournamentName);
         }
-
+        
         private void ScheduleNewRound()
         {
+
             Console.Write("Angiv navn på liga: ");
             string tournamentName = Console.ReadLine();
             Console.Clear();
-            control.ScheduleNewRound(tournamentName);
+            try
+            {
+                control.ScheduleNewRound(tournamentName);
+            }
+
+            catch(Exception e) { Console.WriteLine(e.Message); }
+
         }
+    
 
         private void SaveMatch()
         {

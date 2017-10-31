@@ -39,7 +39,7 @@ namespace DragonsLair_1
         }
         public void SetStatusFinished()
         {
-
+            
         }
         
         public Round GetRound(int idx)
