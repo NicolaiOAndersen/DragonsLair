@@ -102,7 +102,7 @@ namespace DragonsLair_1
                             newRound.AddMatch(match);
                         }
                         //
-
+                        tournament.Add(newRound);
 
                     }
                     else

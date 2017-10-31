@@ -25,6 +25,11 @@ namespace DragonsLair_1
                 new Team("The Corinthians")
             });
         }
+        private List<Round> Rounds()
+        {
+
+            return new List<Round>();
+        }
 
         
 
@@ -32,6 +37,11 @@ namespace DragonsLair_1
         {
             return 3;
         }
+        public void Add(Round round)
+        {
+            //Rounds.Add(round);
+        }
+
         
         public Round GetRound(int idx)
         {
