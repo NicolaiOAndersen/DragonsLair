@@ -7,9 +7,12 @@ namespace DragonsLair_1
     {
         public string Name { get; set; }
 
+        public bool StatusFinish { get; set; }
+
         public Tournament(string tournamentName)
         {
             Name = tournamentName;
+            StatusFinish = false;
         }
 
         public List<Team> GetTeams()
@@ -42,7 +45,8 @@ namespace DragonsLair_1
         {
             //Lav en attribute, mangler status attribute.
             //Måske skal det håndteres i controller.
-            
+            //Der bliver tilføjet en property
+            StatusFinish = true;
 
         }
         
