@@ -21,9 +21,18 @@ namespace DragonsLair_1
             {
                 Round currentRound = tournament.GetRound(i);
                 List<Team> winningTeams = currentRound.GetWinningTeams();
+
+                
+                foreach (var team in winningTeams)
+                {
+                    Console.WriteLine(team.Name + " Round: " + (i + 1) + " winner of round");
+                }
+
+
+
             }
 
-
+            
 
 
             //man kunne return string

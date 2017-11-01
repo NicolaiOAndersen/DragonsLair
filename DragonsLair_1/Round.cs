@@ -4,7 +4,7 @@ namespace DragonsLair_1
 {
     public class Round
     {
-        private List<Match> matches = new List<Match>();
+        public List<Match> matches = new List<Match>();
 
         private Team FreeRider = new Team("");
 
