@@ -150,7 +150,9 @@ namespace DragonsLair_1
             if (match != null && match.Winner == null)
             {
                 //Skal hente et nyt team med det navn.
-                //Tournament winner = tournament.GetTeams(winningTeam);
+                Team winner = tournament.GetTeam(winningTeam);
+
+                
 
                
 

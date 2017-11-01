@@ -17,6 +17,7 @@ namespace DragonsLair_1
 
         public List<Team> GetTeams()
         {
+            
             return new List<Team>(new Team[] {
                 new Team("The Valyrians"),
                 new Team("The Spartans"),
@@ -27,6 +28,21 @@ namespace DragonsLair_1
                 new Team("The Megareans"),
                 new Team("The Corinthians")
             });
+        }
+        public Team GetTeam(string winner)
+        {
+
+            Team resultat = null;
+            foreach(var team in GetTeams())
+            {
+                if (team.Name == winner)
+                {
+                    resultat = team;
+                }
+                
+            }
+
+            return resultat;
         }
         
 
