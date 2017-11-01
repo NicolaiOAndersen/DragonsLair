@@ -12,15 +12,39 @@ namespace DragonsLair_1
         {
             matches.Add(m);
         }
-
+        //overload
         public Match GetMatch(string teamName1, string teamName2)
         {
+            //man kunne lave en foreach hvor man breaker når man finder den,
+            //det er ikke det kønneste men det virker.
+            Match resultat = null;
 
+            foreach(Match match in matches)
+            {
+                if((match.FirstOpponent.Name == teamName1 && match.SecondOpponent.Name == teamName2) || (match.FirstOpponent.Name == teamName2 && match.SecondOpponent.Name == teamName1))
+                {
+                    resultat = match;
+                    break;
+                }
+            }
 
-            // TODO: Implement this method
-            return null;
+            return resultat;
         }
+        public Match GetMatch(string team)
+        {
+            Match resultat = null;
 
+            foreach (Match match in matches)
+            {
+                if (match.FirstOpponent.Name == team || match.SecondOpponent.Name == team)
+                {
+                    resultat = match;
+                    break;
+                }
+            }
+            return resultat;
+           
+        }
         public bool IsMatchesFinished()
         {
             bool isFinished = false;

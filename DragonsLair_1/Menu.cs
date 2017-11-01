@@ -84,6 +84,8 @@ namespace DragonsLair_1
 
         private void SaveMatch()
         {
+
+
             Console.Write("Angiv navn på liga: ");
             string tournamentName = Console.ReadLine();
             Console.Write("Angiv runde: ");
@@ -97,6 +99,8 @@ namespace DragonsLair_1
             string winner = Console.ReadLine();
             Console.Clear();
             control.SaveMatch(tournamentName, roundnr, opponent1, opponent2, winner);
+
+
         }
     }
 }
