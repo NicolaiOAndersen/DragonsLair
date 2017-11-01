@@ -15,19 +15,44 @@ namespace DragonsLair_1
 
             Tournament tournament = tournamentRepository.GetTournament(tournamentName);
             List<Team> teams = tournament.GetTeams();
-            List<Team> teamsSorted = new List<Team>();
+            //List<Team> teamsSorted = new List<Team>();
 
-            for (int i = 0; i < tournament.GetNumberOfRounds(); i++)
+            for (int i = 0; i <= tournament.GetNumberOfRounds(); i++)
             {
+                int a = 1;
                 Round currentRound = tournament.GetRound(i);
                 List<Team> winningTeams = currentRound.GetWinningTeams();
-
-                
-                foreach (var team in winningTeams)
+                List<Match> Matches = tournament.GetRound(0).matches;
+                //List<Team> Matches = currentRound.GetLosingTeams();
+                if (winningTeams.Count == 0)
                 {
-                    Console.WriteLine(team.Name + " Round: " + (i + 1) + " winner of round");
+                    
+                    foreach (var match in Matches)
+                    {
+                        if (match.Winner == null)
+                        {
+                            Console.WriteLine("Match Nr." + (a + 1));
+                            Console.WriteLine("First team name: " + match.FirstOpponent.Name);
+                            Console.WriteLine("Second team name: " + match.SecondOpponent.Name);
+                            i++;
+                            a++;
+                        }
+                    }
                 }
-
+                else if (winningTeams.Count > 0)
+                {
+                    foreach (var team in winningTeams)
+                    {
+                        
+                        Console.WriteLine(team.Name + " Wins round " + (i + 1));
+                        
+                    }
+                }
+                else
+                {
+                    
+                }
+                
 
 
             }
@@ -149,13 +174,18 @@ namespace DragonsLair_1
 
             if (match != null && match.Winner == null)
             {
-                //Skal hente et nyt team med det navn.
+                //Skal hente teamet med det navn.
+                //Har lavet en ny metode GetTeam.
                 Team winner = tournament.GetTeam(winningTeam);
-
-                
+                match.Winner = winner;
+                Console.WriteLine("Matchen er nu gemt");
 
                
 
+            }
+            else
+            {
+                Console.WriteLine("Noget gik galt");
             }
         }
     }

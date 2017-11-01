@@ -65,7 +65,10 @@ namespace DragonsLair_1
 
             foreach (Match match in matches)
             {
+                if (match.Winner != null)
+                {
                     winner.Add(match.Winner);
+                }
             }
 
             
