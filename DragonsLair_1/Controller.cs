@@ -129,7 +129,20 @@ namespace DragonsLair_1
 
         public void SaveMatch(string tournamentName, int roundNumber, string team1, string team2, string winningTeam)
         {
-            // Do not implement this method
+            Tournament tournament = tournamentRepository.GetTournament(tournamentName);
+
+            Round round = tournament.GetRound(roundNumber - 1);
+
+            //Ny GetMatch
+            //har lavet en ny GetMatch metode (Overload) som kun modtager et kriterie (winning team)
+            Match match = round.GetMatch(winningTeam);
+
+
+            if (match != null && match.Winner == null)
+            {
+
+
+            }
         }
     }
 }
